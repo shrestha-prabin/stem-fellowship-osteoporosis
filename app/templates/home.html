@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% block content %}
+<div
+  class="shadow bg-white container mx-auto py-16 px-20 my-12 rounded max-w-3xl"
+>
+  <form method="post" action="/result" autocomplete="off">
+    <div id="form-content"></div>
+    <button
+      class="bg-indigo-500 font-medium h-9 w-full text-white rounded text-sm cursor-pointer mt-8 hover:bg-indigo-600"
+      type="submit"
+    >
+      Submit
+    </button>
+    <div class="flex justify-center mt-4">
+      <button type="reset" class="text-sm font-medium cursor-pointer">
+        Reset Form
+      </button>
+    </div>
+  </form>
+</div>
+<script src="{{url_for('static', filename='form-renderer.js')}}"></script>
+{% endblock %}

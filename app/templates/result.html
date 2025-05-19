@@ -1,0 +1,28 @@
+{% extends 'base.html' %} {% block content %}
+<div
+  class="shadow bg-white container mx-auto py-16 px-20 my-12 rounded max-w-3xl"
+>
+  <ol class="text-sm list-decimal">
+    {%for item in result %}
+    <li>
+      <span>{{item.q}}</span>
+      <span class="font-bold">{{item.a}}</span>
+    </li>
+    {% endfor %}
+  </ol>
+
+  <button
+    class="bg-indigo-500 font-medium h-9 w-full text-white rounded text-sm cursor-pointer mt-8 hover:bg-indigo-600"
+    onclick="window.location.replace('/')"
+  >
+    Submit Another Response
+  </button>
+
+  <button
+    class="w-full text-sm font-medium mt-4 cursor-pointer"
+    onclick="window.history.back()"
+  >
+    Go Back
+  </button>
+</div>
+{% endblock %}
