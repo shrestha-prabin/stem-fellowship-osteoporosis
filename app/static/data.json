@@ -47,7 +47,7 @@
   {
     "question": "If yes, when and where was your last bone density scan?",
     "weight": 0,
-    "type": "boolean",
+    "type": "text",
     "name": "lastDexaScanDetails"
   },
   {
