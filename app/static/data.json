@@ -1,5 +1,15 @@
 [
   {
+    "question": "What is your gender?",
+    "weight": 1,
+    "type": "select",
+    "name": "gender",
+    "options": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
     "question": "Have you ever had a hip fracture?",
     "weight": 1,
     "type": "boolean",
@@ -66,37 +76,43 @@
     "question": "Have you gone through menopause?",
     "weight": 0.5,
     "type": "boolean",
-    "name": "menopauseStatus"
+    "name": "menopauseStatus",
+    "femaleOnly": true
   },
   {
     "question": "Are you currently going through menopause?",
     "weight": 0.5,
     "type": "boolean",
-    "name": "currentlyInMenopause"
+    "name": "currentlyInMenopause",
+    "femaleOnly": true
   },
   {
     "question": "Was your menopause natural or surgical?",
     "weight": 0.5,
     "type": "boolean",
-    "name": "menopauseType"
+    "name": "menopauseType",
+    "femaleOnly": true
   },
   {
     "question": "If surgical, were both ovaries removed?",
     "weight": 1,
     "type": "boolean",
-    "name": "ovariesRemoved"
+    "name": "ovariesRemoved",
+    "femaleOnly": true
   },
   {
     "question": "If yes, at what age did you undergo menopause?",
     "weight": 0.5,
     "type": "number",
-    "name": "ageAtMenopause"
+    "name": "ageAtMenopause",
+    "femaleOnly": true
   },
   {
     "question": "Have you ever had premenopausal amenorrhea?",
     "weight": 0.5,
     "type": "boolean",
-    "name": "premenopausalAmenorrhea"
+    "name": "premenopausalAmenorrhea",
+    "femaleOnly": true
   },
   {
     "question": "Are you PRE-, PERI-, or POST-menopausal?",
@@ -108,7 +124,8 @@
       "PERI-menopausal",
       "POST-menopausal"
     ],
-    "name": "menopausalStage"
+    "name": "menopausalStage",
+    "femaleOnly": true
   },
   {
     "question": "Has your mother or father ever had a hip fracture?",
@@ -186,7 +203,8 @@
     "question": "Have you taken estrogen (pill or patch)?",
     "weight": 0.5,
     "type": "boolean",
-    "name": "takenEstrogen"
+    "name": "takenEstrogen",
+    "femaleOnly": true
   },
   {
     "question": "Have you taken osteoporosis medications like Fosamax, Actonel, Boniva, Reclast, or Prolia?",
@@ -312,6 +330,7 @@
     "question": "Are you currently pregnant?",
     "weight": 0,
     "type": "boolean",
-    "name": "currentlyPregnant"
+    "name": "currentlyPregnant",
+    "femaleOnly": true
   }
 ]
