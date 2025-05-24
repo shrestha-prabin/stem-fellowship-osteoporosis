@@ -2,7 +2,7 @@
 <div
   class="shadow bg-white container mx-auto py-16 px-20 my-12 rounded max-w-3xl"
 >
-  <ol class="text-sm list-decimal">
+  <ol class="text-sm list-decimal h-[30em] overflow-y-scroll">
     {%for item in result %}
     <li>
       <span>{{item.q}}</span>
@@ -18,11 +18,11 @@
     Submit Another Response
   </button>
 
-  <button
+  <!-- <button
     class="w-full text-sm font-medium mt-4 cursor-pointer"
     onclick="window.history.back()"
   >
     Go Back
-  </button>
+  </button> -->
 </div>
 {% endblock %}

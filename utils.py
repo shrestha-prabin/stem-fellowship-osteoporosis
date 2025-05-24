@@ -13,6 +13,11 @@ def paragraph(data: dict) -> str:
     return formatted_paragraph
 
 
+def prediction(calculated_weight, total_weight):
+    risk_percentage = calculated_weight / total_weight * 100
+    return f"The patient is at {risk_percentage:.2f}% risk of osteoporosis"
+
+
 def export_form_data(form_data):
     result = []
     with open("./app/static/data.json", encoding="utf-8") as f:
@@ -23,9 +28,12 @@ def export_form_data(form_data):
         total_weight = 0
 
         for form_item in form_meta:
-            total_weight += form_item["weight"]
-
             col = form_item["name"]
+
+            if form_item.get("femaleOnly") and form_data.get("gender") == "Male":
+                output_data[col] = [""]
+                continue
+
             selected_values = []
             if form_item.get("type") == "multiselect":
                 selected_values = form_data.getlist(col)
@@ -33,25 +41,33 @@ def export_form_data(form_data):
             else:
                 value = form_data.get(col)
 
+            weight = 0
             if form_item.get("type") == "boolean":
                 if value == "Yes":
-                    input_weight += form_item["weight"]
+                    weight = form_item["weight"]
 
             elif form_item.get("type") == "select":
                 if value is not "--None--":
-                    input_weight += form_item["weight"]
+                    weight = form_item["weight"]
             elif form_item.get("type") == "multiselect":
                 if len(selected_values) > 0:
-                    input_weight += form_item["weight"]
+                    weight = form_item["weight"]
             else:
                 if len(value) > 0:
-                    input_weight += form_item["weight"]
+                    weight = form_item["weight"]
+
+            input_weight += weight
+            total_weight += form_item["weight"]
 
             print(col, value)
             output_data[col] = [value]
             result.append({"q": form_item["question"], "a": value})
+
         paragraph_entry = paragraph(output_data)
         output_data["llm_data"] = paragraph_entry
+        output_data["llm_prediction"] = (
+            paragraph_entry + " " + prediction(input_weight, total_weight)
+        )
         output_data["input_weight"] = input_weight
         output_data["total_weight"] = total_weight
         df = pd.DataFrame(output_data)
