@@ -13,19 +13,22 @@
     "question": "Have you ever had a hip fracture?",
     "weight": 1,
     "type": "boolean",
-    "name": "hipFracture"
+    "name": "hipFracture",
+    "default": false
   },
   {
     "question": "Have you ever had a spine fracture?",
     "weight": 1,
     "type": "boolean",
-    "name": "spineFracture"
+    "name": "spineFracture",
+    "default": false
   },
   {
     "question": "Have you had a fracture other than spine or hip as an adult?",
     "weight": 0.5,
     "type": "boolean",
-    "name": "otherAdultFracture"
+    "name": "otherAdultFracture",
+    "default": false
   },
   {
     "question": "At what age did your fracture(s) occur?",
@@ -52,7 +55,8 @@
     "question": "Have you had a prior bone density (DEXA) scan?",
     "weight": 0.5,
     "type": "boolean",
-    "name": "priorDexaScan"
+    "name": "priorDexaScan",
+    "default": false
   },
   {
     "question": "If yes, when and where was your last bone density scan?",
@@ -64,13 +68,15 @@
     "question": "Have you had a fragility fracture since age 45?",
     "weight": 1,
     "type": "boolean",
-    "name": "fragilityFractureAfter45"
+    "name": "fragilityFractureAfter45",
+    "default": false
   },
   {
     "question": "Are you a young patient with low-trauma fracture(s)?",
     "weight": 1,
     "type": "boolean",
-    "name": "youngLowTraumaFracture"
+    "name": "youngLowTraumaFracture",
+    "default": false
   },
   {
     "question": "Have you gone through menopause?",
@@ -137,67 +143,78 @@
     "question": "Is there a family history of osteoporosis?",
     "weight": 1,
     "type": "boolean",
-    "name": "familyHistoryOsteoporosis"
+    "name": "familyHistoryOsteoporosis",
+    "default": false
   },
   {
     "question": "Is there a family history of hip fracture?",
     "weight": 1,
     "type": "boolean",
-    "name": "familyHistoryHipFracture"
+    "name": "familyHistoryHipFracture",
+    "default": false
   },
   {
     "question": "Are you a current smoker?",
     "weight": 1,
     "type": "boolean",
-    "name": "currentSmoker"
+    "name": "currentSmoker",
+    "default": false
   },
   {
     "question": "Do you consume more than 2 alcoholic drinks per day?",
     "weight": 0.5,
     "type": "boolean",
-    "name": "excessiveAlcoholIntake"
+    "name": "excessiveAlcoholIntake",
+    "default": false
   },
   {
     "question": "Do you have a history of falls?",
     "weight": 0.5,
     "type": "boolean",
-    "name": "historyOfFalls"
+    "name": "historyOfFalls",
+    "default": false
   },
   {
     "question": "Do you currently or have you ever smoked?",
     "weight": 0.5,
     "type": "boolean",
-    "name": "everSmoked"
+    "name": "everSmoked",
+    "default": false
   },
   {
     "question": "Do you have an eating disorder?",
     "weight": 1,
     "type": "boolean",
-    "name": "eatingDisorder"
+    "name": "eatingDisorder",
+    "default": false
   },
   {
     "question": "Is your diet high in calcium?",
     "weight": 0.5,
     "type": "boolean",
-    "name": "highCalciumDiet"
+    "name": "highCalciumDiet",
+    "default": false
   },
   {
     "question": "Have you taken calcium supplements?",
     "weight": 0.5,
     "type": "boolean",
-    "name": "calciumSupplements"
+    "name": "calciumSupplements",
+    "default": false
   },
   {
     "question": "Have you taken vitamin D supplements?",
     "weight": 0.5,
     "type": "boolean",
-    "name": "vitaminDSupplements"
+    "name": "vitaminDSupplements",
+    "default": false
   },
   {
     "question": "Have you ever taken oral steroids like prednisone or dexamethasone for more than 3 months?",
     "weight": 1,
     "type": "boolean",
-    "name": "longTermSteroids"
+    "name": "longTermSteroids",
+    "default": false
   },
   {
     "question": "Have you taken estrogen (pill or patch)?",
@@ -210,121 +227,141 @@
     "question": "Have you taken osteoporosis medications like Fosamax, Actonel, Boniva, Reclast, or Prolia?",
     "weight": 0.5,
     "type": "boolean",
-    "name": "osteoporosisMedications"
+    "name": "osteoporosisMedications",
+    "default": false
   },
   {
     "question": "Have you used SSRIs (antidepressants)?",
     "weight": 0.5,
     "type": "boolean",
-    "name": "ssriUse"
+    "name": "ssriUse",
+    "default": false
   },
   {
     "question": "Have you taken proton pump inhibitors (e.g., omeprazole)?",
     "weight": 0.5,
     "type": "boolean",
-    "name": "ppiUse"
+    "name": "ppiUse",
+    "default": false
   },
   {
     "question": "Have you ever taken glucocorticoids?",
     "weight": 1,
     "type": "boolean",
-    "name": "glucocorticoidUse"
+    "name": "glucocorticoidUse",
+    "default": false
   },
   {
     "question": "Have you taken aromatase inhibitors or androgen-deprivation therapy?",
     "weight": 1,
     "type": "boolean",
-    "name": "hormoneTherapy"
+    "name": "hormoneTherapy",
+    "default": false
   },
   {
     "question": "Do you have rheumatoid arthritis?",
     "weight": 1,
     "type": "boolean",
-    "name": "rheumatoidArthritis"
+    "name": "rheumatoidArthritis",
+    "default": false
   },
   {
     "question": "Do you have primary hyperparathyroidism?",
     "weight": 1,
     "type": "boolean",
-    "name": "primaryHyperparathyroidism"
+    "name": "primaryHyperparathyroidism",
+    "default": false
   },
   {
     "question": "Do you have hyperthyroidism?",
     "weight": 0.5,
     "type": "boolean",
-    "name": "hyperthyroidism"
+    "name": "hyperthyroidism",
+    "default": false
   },
   {
     "question": "Have you had delayed puberty?",
     "weight": 0.5,
     "type": "boolean",
-    "name": "delayedPuberty"
+    "name": "delayedPuberty",
+    "default": false
   },
   {
     "question": "Do you have Crohn's disease or celiac disease?",
     "weight": 1,
     "type": "boolean",
-    "name": "crohnsOrCeliac"
+    "name": "crohnsOrCeliac",
+    "default": false
   },
   {
     "question": "Do you have chronic kidney disease or are on dialysis?",
     "weight": 1,
     "type": "boolean",
-    "name": "kidneyDiseaseOrDialysis"
+    "name": "kidneyDiseaseOrDialysis",
+    "default": false
   },
   {
     "question": "Do you have HIV/AIDS?",
     "weight": 0.5,
     "type": "boolean",
-    "name": "hivAids"
+    "name": "hivAids",
+    "default": false
   },
   {
     "question": "Do you have COPD?",
     "weight": 0.5,
     "type": "boolean",
-    "name": "copd"
+    "name": "copd",
+    "default": false
   },
   {
     "question": "Have you had depression?",
     "weight": 0.5,
     "type": "boolean",
-    "name": "depression"
+    "name": "depression",
+    "default": false
   },
   {
     "question": "Do you have diabetes?",
     "weight": 0.5,
     "type": "boolean",
-    "name": "diabetes"
+    "name": "diabetes",
+    "default": false
   },
   {
     "question": "Have you had recent weight loss?",
     "weight": 0.5,
     "type": "boolean",
-    "name": "recentWeightLoss"
+    "name": "recentWeightLoss",
+    "default": false
   },
   {
     "question": "Have you had recent height loss?",
     "weight": 1,
     "type": "boolean",
-    "name": "recentHeightLoss"
+    "name": "recentHeightLoss",
+    "default": false
   },
   {
     "question": "Have you had spine surgery (e.g., laminectomy or kyphoplasty)?",
     "weight": 0.5,
     "type": "boolean",
-    "name": "spineSurgery"
+    "name": "spineSurgery",
+    "default": false
   },
   {
     "question": "Have you had hip replacement or fracture pinning surgery?",
     "weight": 0.5,
     "type": "boolean",
-    "name": "hipSurgery"
+    "name": "hipSurgery",
+    "default": false
   },
   {
     "question": "Have you had gastric bypass or stomach resection?",
     "weight": 1,
     "type": "boolean",
-    "name": "gastricSurgery"
+    "name": "gastricSurgery",
+    "default": false
   },
   {
     "question": "Are you currently pregnant?",

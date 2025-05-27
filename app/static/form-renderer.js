@@ -8,6 +8,8 @@ fetch('static/data.json').then(res => res.json()).then(data => {
   data.forEach((item) => {
     switch (item.type) {
       case "boolean":
+        const defaultVal = item.default === false ? "No" : item.default === true ? "Yes" : null;
+
         formInputs.push(`
           <li id='q-${item['name']}'>
             <div>
@@ -15,21 +17,21 @@ fetch('static/data.json').then(res => res.json()).then(data => {
               <div class='flex flex-row space-x-4'>
                 <div>
                   <label for='${item['name']}-yes'>
-                    <input type='radio' id='${item['name']}-yes' name='${item['name']}' value='Yes' />
+                    <input type='radio' id='${item['name']}-yes' name='${item['name']}' value='Yes' ${defaultVal === "Yes" ? "checked" : ""} />
                     Yes
-                  <label>
+                  </label>
                 </div>
                 <div>
                   <label for='${item['name']}-no'>
-                    <input type='radio' id='${item['name']}-no' name='${item['name']}' value='No' />
+                    <input type='radio' id='${item['name']}-no' name='${item['name']}' value='No' ${defaultVal === "No" ? "checked" : ""} />
                     No
-                  <label>
+                  </label>
                 </div>
               </div>
             </div>
           </li>
-        `)
-        break;
+        `);
+      break;
 
       case "select":
         const options = []
