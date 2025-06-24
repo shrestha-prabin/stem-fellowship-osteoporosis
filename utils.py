@@ -180,7 +180,7 @@ def prediction(calculated_weight, total_weight):
     return f"The patient is at {risk_percentage:.2f}% risk of osteoporosis"
 
 
-def export_form_data(form_data):
+def export_form_data(form_data, export=False):
     result = []
     with open("./app/static/data.json", encoding="utf-8") as f:
         form_meta = json.load(f)
@@ -232,10 +232,12 @@ def export_form_data(form_data):
         )
         output_data["input_weight"] = input_weight
         output_data["total_weight"] = total_weight
-        df = pd.DataFrame(output_data)
-        df.to_csv(f"data/data_{time.time()}.csv", index=False)
 
-        return result
+        if export:
+            df = pd.DataFrame(output_data)
+            df.to_csv(f"data/data_{time.time()}.csv", index=False)
+
+        return result, output_data
 
 
 def merge_survey_data():

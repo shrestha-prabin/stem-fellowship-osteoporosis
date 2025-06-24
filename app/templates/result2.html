@@ -1,0 +1,33 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container mx-auto my-12 max-w-3xl">
+  <div class="grid gap-4">
+    <div class="p-4 bg-white shadow rounded">
+      <div class="text-sm text-gray-400">Summary</div>
+      <div></div>
+    </div>
+
+    <div class="p-4 bg-white shadow rounded">
+      <div class="text-sm text-gray-400">RoBERTa</div>
+      <div>The patient has {{roberta_result}} risk of osteoporosis.</div>
+    </div>
+
+    <div class="p-4 bg-white shadow rounded">
+      <div class="text-sm text-gray-400">DistilBERT</div>
+      <div>The patient has {{distilbert_result}} risk of osteoporosis.</div>
+    </div>
+  </div>
+  <button
+    class="bg-indigo-500 font-medium h-9 w-full text-white rounded text-sm cursor-pointer mt-8 hover:bg-indigo-600"
+    onclick="window.location.replace('/')"
+  >
+    Submit Another Response
+  </button>
+
+  <button
+    class="w-full text-sm font-medium mt-4 cursor-pointer"
+    onclick="window.history.back()"
+  >
+    Go Back
+  </button>
+</div>
+{% endblock %}
