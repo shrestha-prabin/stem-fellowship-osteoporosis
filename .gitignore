@@ -6,3 +6,5 @@ app/data.csv
 automate.py
 
 .DS_Store
+
+.env
