@@ -1,6 +1,7 @@
 import os
 import re
 
+import markdown
 import requests
 from dotenv import load_dotenv
 from huggingface_hub import InferenceClient
@@ -20,6 +21,9 @@ def create_prompt(context):
 
     PATIENT INFORMATION:
     Here is the patient data:
+
+    After your're done, give 3 possible solutions to mitigate the risk of the disease and promote life longevity.
+    
     {context}
     =====
     """
@@ -54,11 +58,13 @@ def generate_summary(model, provider, query):
                 if content_piece:
                     full_response += content_piece
 
-        full_response = full_response.replace("\n", "")
-
         print(model)
         print(full_response)
-        full_response = re.sub(r"(<think>.*<\/think>)", "", full_response).strip()
+        return markdown.markdown(full_response)
+
+        # full_response = full_response.replace("\n", "")
+
+        # full_response = re.sub(r"(<think>.*<\/think>)", "", full_response).strip()
         return full_response
         # if response.choices is not None:
         #     return response.choices[0].message.content

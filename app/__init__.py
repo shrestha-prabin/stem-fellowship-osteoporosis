@@ -7,18 +7,24 @@ from transformers import pipeline
 from summarization import generate_summary, generate_summary_deepseek
 from utils import export_form_data, merge_survey_data
 
-label_to_prediction = {
-    "LABEL_1": "low",
-    "LABEL_2": "medium",
-    "LABEL_3": "high",
-}
+
+def label_to_prediction(label):
+    print(label)
+    if label == "LABEL_0":
+        category = "low"
+    elif label == "LABEL_1":
+        category = "medium"
+    else:
+        category = "high"
+
+    return f"The patient has {category} risk of osteoporosis."
 
 
 def label_to_percentage(label):
     print(label)
-    if label == "LABEL_1":
+    if label == "LABEL_0":
         percentage = random.randint(7, 10)
-    elif label == "LABEL_2":
+    elif label == "LABEL_1":
         percentage = random.randint(15, 20)
     else:
         percentage = random.randint(34, 40)
@@ -61,16 +67,16 @@ def create_app():
         return render_template(
             "result2.html",
             result=details,
-            roberta_result=label_to_percentage(result1[0]["label"]),
-            distilbert_result=label_to_percentage(result2[0]["label"]),
-            # roberta_result=label_to_prediction[result1[0]["label"]],
-            # distilbert_result=label_to_prediction[result2[0]["label"]],
+            # roberta_result=label_to_percentage(result1[0]["label"]),
+            # distilbert_result=label_to_percentage(result2[0]["label"]),
+            roberta_result=label_to_prediction(result1[0]["label"]),
+            distilbert_result=label_to_prediction(result2[0]["label"]),
             llama_result=generate_summary(
                 "meta-llama/Llama-3.1-8B-Instruct",
                 "fireworks-ai",
                 output_data["llm_data"],
             ),
-            deepseek_result=generate_summary_deepseek(output_data["llm_data"]),
+            # deepseek_result=generate_summary_deepseek(output_data["llm_data"]),
         )
 
     @app.route("/download")

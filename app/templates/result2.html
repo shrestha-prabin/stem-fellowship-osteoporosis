@@ -2,26 +2,24 @@
 <div class="container mx-auto my-12 max-w-3xl">
   <div class="grid gap-4">
     <div class="p-4 bg-white shadow rounded">
-      <div class="text-sm text-gray-400">
-        Summary (Meta-Llama-3-8B-Instruct)
-      </div>
-      <div>{{llama_result}}</div>
+      <div class="text-sm text-gray-400">Summary (Meta-Llama)</div>
+      <div>{{ llama_result|safe }}</div>
     </div>
 
-    <div class="p-4 bg-white shadow rounded">
+    <!-- <div class="p-4 bg-white shadow rounded">
       <div class="text-sm text-gray-400">Summary (deepseek-llm-7b-chat)</div>
       <div>{{deepseek_result}}</div>
-    </div>
+    </div> -->
 
     <div class="p-4 bg-white shadow rounded">
       <div class="text-sm text-gray-400">RoBERTa</div>
       <div>{{roberta_result}}</div>
     </div>
 
-    <div class="p-4 bg-white shadow rounded">
+    <!-- <div class="p-4 bg-white shadow rounded">
       <div class="text-sm text-gray-400">DistilBERT</div>
       <div>{{distilbert_result}}</div>
-    </div>
+    </div> -->
   </div>
   <button
     class="bg-indigo-500 font-medium h-9 w-full text-white rounded text-sm cursor-pointer mt-8 hover:bg-indigo-600"
