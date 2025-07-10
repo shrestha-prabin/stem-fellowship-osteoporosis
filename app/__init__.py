@@ -71,12 +71,12 @@ def create_app():
             # distilbert_result=label_to_percentage(result2[0]["label"]),
             roberta_result=label_to_prediction(result1[0]["label"]),
             distilbert_result=label_to_prediction(result2[0]["label"]),
-            llama_result=generate_summary(
-                "meta-llama/Llama-3.1-8B-Instruct",
-                "fireworks-ai",
-                output_data["llm_data"],
-            ),
-            # deepseek_result=generate_summary_deepseek(output_data["llm_data"]),
+            # llama_result=generate_summary(
+            #     "meta-llama/Llama-3.1-8B-Instruct",
+            #     "fireworks-ai",
+            #     output_data["llm_data"],
+            # ),
+            deepseek_result=generate_summary_deepseek(output_data["llm_data"]),
         )
 
     @app.route("/download")
