@@ -179,19 +179,28 @@
     "question": "Is your diet high in calcium?",
     "weight": 0.5,
     "type": "boolean",
-    "name": "highCalciumDiet"
+    "name": "highCalciumDiet",
+    "negate": true
   },
   {
     "question": "Have you taken calcium supplements?",
     "weight": 0.5,
     "type": "boolean",
-    "name": "calciumSupplements"
+    "name": "calciumSupplements",
+    "negate": true
   },
   {
     "question": "Have you taken vitamin D supplements?",
     "weight": 0.5,
     "type": "boolean",
-    "name": "vitaminDSupplements"
+    "name": "vitaminDSupplements",
+    "negate": true
+  },
+  {
+    "question": "Parent Hip Fracture?",
+    "weight": 1,
+    "type": "boolean",
+    "name": "parentHipFracture"
   },
   {
     "question": "Have you ever taken oral steroids like prednisone or dexamethasone for more than 3 months?",
