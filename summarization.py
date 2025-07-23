@@ -16,7 +16,7 @@ def create_prompt(context):
     the key facts about fractures, scans, menopause or reproductive status, family 
     history, lifestyle habits (smoking, alcohol, falls), important supplements or 
     medications, major medical conditions, and surgeries exactly as stated. Limit the 
-    summary to 4-6 short sentences. Do not interpret, explain, or fill in missing 
+    summary to 4-6 sentences. Do not interpret, explain, or fill in missing 
     information. Use only what is written.
 
     PATIENT INFORMATION:
@@ -95,8 +95,11 @@ def generate_summary_deepseek(query):
             "parameters": {"max_new_tokens": 500},
         }
     )
-
-    output = output[0]["generated_text"].split("=====")[-1]
-
     print(output)
+
+    if isinstance(output, list):
+        output = output[0]["generated_text"].split("=====")[-1]
+    else:
+        raise Exception(output.get("error"))
+
     return output

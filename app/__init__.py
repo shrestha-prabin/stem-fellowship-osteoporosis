@@ -4,6 +4,8 @@ import pandas as pd
 from flask import Flask, render_template, request, send_file
 from transformers import pipeline
 
+from generate_data import generate_llm_data
+from preprocess import process_text
 from summarization import generate_summary, generate_summary_deepseek
 from utils import export_form_data, merge_survey_data
 
@@ -12,8 +14,6 @@ def label_to_prediction(label):
     print(label)
     if label == "LABEL_0":
         category = "low"
-    elif label == "LABEL_1":
-        category = "medium"
     else:
         category = "high"
 
@@ -52,12 +52,13 @@ def create_app():
 
     @app.route("/result", methods=["POST"])
     def result():
-        # details = export_form_data(request.form)
-        # return render_template("result.html", result=details)
-
         details, output_data = export_form_data(request.form)
 
-        data = [output_data["llm_data"]]
+        # Convert form data to paragraph
+        data = generate_llm_data(request.form)
+
+        # Preprocess text
+        data = process_text(data)
 
         result1 = roberta_pipe(data)
         result2 = distilbert_pipe(data)
